@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Luiz Felipe G. Pereira"]
   spec.email         = ["luiz.felipe.gp@gmail.com"]
 
-  spec.summary       = %q{Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{Write a longer description or delete this line.}
+  spec.summary       = %q{Huginn Agent for integration with Transmission}
+  spec.description   = %q{This agent provides an interface between Huginn and the Transmission torrent client}
 
-  spec.homepage      = "https://github.com/[my-github-username]/huginn_transmission_agent"
+  spec.homepage      = "https://github.com/Draiken/huginn_transmission_agent"
 
   spec.license       = "MIT"
 
@@ -21,10 +21,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = Dir['spec/**/*.rb'].reject { |f| f[%r{^spec/huginn}] }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "httparty", "~> 0.14.0"
-
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
 
   spec.add_runtime_dependency "huginn_agent"
+  spec.add_runtime_dependency "httparty", "~> 0.14.0"
 end
