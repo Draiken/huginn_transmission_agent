@@ -22,6 +22,17 @@ And then execute:
 
 TODO: Write usage instructions here
 
+Incoming events accept the following keys:
+
+Required:
+	url: The URL of the torrent file, or magnet link data.
+
+Optional:
+	paused: true/false, Should the torrent start paused or now
+        download-dir: destination directory for the torrent data
+        bandwidthPriority: integer, the priority to add the torrent with
+
+
 ## Development
 
 Running `rake` will clone and set up Huginn in `spec/huginn` to run the specs of the Gem in Huginn as if they would be build-in Agents. The desired Huginn repository and branch can be modified in the `Rakefile`:
