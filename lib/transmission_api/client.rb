@@ -54,26 +54,15 @@ class TransmissionApi::Client
     response["arguments"]["torrents"].first
   end
 
-  def create(filename, download_dir = nil, bandwidthPriority = nil, paused = nil)
+  def create(filename, download_dir = nil, bandwidth_priority = nil, paused = nil)
     log "add_torrent: #{filename}"
 
     data = {
-          :filename => filename,
-	  :paused => paused,
-       } 
-
-    # add some of the optional parameters if provided
-    if (download_dir != nil)
-    	data["download-dir"] = download_dir
-    end
-    
-    if (bandwidthPriority != nil)
-    	data["bandwidthPriority"] = bandwidthPriority
-    end
-    
-    if (paused != nil)
-    	data["paused"] = paused
-    end
+      :filename => filename,
+      :paused => paused,
+      :"download-dir" => download_dir,
+      :bandwidthPrioity => bandwidth_priority
+    }.compact 
     
     response =
       post(
