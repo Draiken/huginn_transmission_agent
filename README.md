@@ -20,6 +20,7 @@ And then execute:
 
 Incoming events accept the following keys:
 
+```
 Required:
 	url: The URL of the torrent file, or magnet link data.
 
@@ -27,7 +28,7 @@ Optional:
 	paused: true/false, Should the torrent start paused or now
         download-dir: destination directory for the torrent data
         bandwidthPriority: integer, the priority to add the torrent with
-
+```
 
 ## Development
 
