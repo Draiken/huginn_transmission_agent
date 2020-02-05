@@ -54,15 +54,20 @@ class TransmissionApi::Client
     response["arguments"]["torrents"].first
   end
 
-  def create(filename)
+  def create(filename, download_dir = nil, bandwidth_priority = nil, paused = nil)
     log "add_torrent: #{filename}"
 
+    data = {
+      :filename => filename,
+      :paused => paused,
+      :"download-dir" => download_dir,
+      :bandwidthPrioity => bandwidth_priority
+    }.compact 
+    
     response =
       post(
         :method => "torrent-add",
-        :arguments => {
-          :filename => filename
-        }
+        :arguments => data
       )
 
     response["arguments"]["torrent-added"]

@@ -43,7 +43,7 @@ module Agents
     def receive(incoming_events)
       incoming_events.each do |event|
         log "Adding torrent: #{event.payload['description']}"
-        client.create(event.payload['url'])
+        client.create(event.payload['url'], event.payload['download-dir'], event.payload['bandwidthPriority'], event.payload['paused'])
       end
     end
 
