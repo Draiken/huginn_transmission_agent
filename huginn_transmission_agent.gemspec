@@ -21,9 +21,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = Dir['spec/**/*.rb'].reject { |f| f[%r{^spec/huginn}] }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "bundler", ">= 2.0"
+  spec.add_development_dependency "rake", ">= 13.0"
 
   spec.add_runtime_dependency "huginn_agent"
-  spec.add_runtime_dependency "httparty", "~> 0.14.0"
+  spec.add_runtime_dependency "httparty", ">= 0.24"
 end
